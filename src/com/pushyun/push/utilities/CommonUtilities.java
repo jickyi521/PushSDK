@@ -12,6 +12,7 @@ public final class CommonUtilities
     /**
      * Base URL of the Demo Server (such as http://10.0.2.2:8080/gcm-demo)
      */
+<<<<<<< HEAD
     //get 
     //udid/android id, app/developer id udid=%s% & app= %s%
     public static final String A2DM_SERVER_REGISTER_URL = "http://192.168.196.58:3000/api/reg?";
@@ -25,6 +26,9 @@ public final class CommonUtilities
     public static final String CMS_SERVER_FEEDBACK_URL = "http://192.168.196.58/api.php?op=push_mobile&a=feedback";
     //appkey, version, channel
     public static final String CMS_SERVER_CHANNEL_URL = "http://192.168.196.58/api.php?op=push_mobile&a=channel";
+=======
+    public static final String SERVER_URL = "http://192.168.196.58/api.php?op=push_mobile&a=register";
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
 
     /**
      * Google API project id registered to use GCM.

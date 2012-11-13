@@ -18,6 +18,7 @@ public class TestKeepAlive extends Activity
             switch (v.getId())
             {
                 case R.id.start:
+<<<<<<< HEAD
                     PushA2DMService.actionStart(TestKeepAlive.this);
                     break;
                 case R.id.stop:
@@ -25,6 +26,15 @@ public class TestKeepAlive extends Activity
                     break;
                 case R.id.ping:
                     PushA2DMService.actionPing(TestKeepAlive.this);
+=======
+                    PushService.actionStart(TestKeepAlive.this);
+                    break;
+                case R.id.stop:
+                    PushService.actionStop(TestKeepAlive.this);
+                    break;
+                case R.id.ping:
+                    PushService.actionPing(TestKeepAlive.this);
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
                     break;
             }
         }

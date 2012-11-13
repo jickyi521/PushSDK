@@ -28,7 +28,11 @@ public class GCMIntentService extends GCMBaseIntentService
     {
         Log.i(TAG, "Device registered: regId = " + registrationId);
         displayMessage(context, getString(R.string.gcm_registered));
+<<<<<<< HEAD
         ServerUtilities.registerCMSServer(context, registrationId);
+=======
+        ServerUtilities.registerA2DMServer(context, registrationId);
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
     }
 
     @Override
@@ -36,9 +40,15 @@ public class GCMIntentService extends GCMBaseIntentService
     {
         Log.i(TAG, "Device unregistered");
         displayMessage(context, getString(R.string.gcm_unregistered));
+<<<<<<< HEAD
         if (GCMRegistrar.isRegisteredOnCMSServer(context))
         {
             ServerUtilities.unregisterCMSServer(context, registrationId);
+=======
+        if (GCMRegistrar.isRegisteredOnServer(context))
+        {
+            ServerUtilities.unregisterA2DMServer(context, registrationId);
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
         }
         else
         {

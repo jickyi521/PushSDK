@@ -1,6 +1,10 @@
 package com.pushyun.push.utilities;
 
+<<<<<<< HEAD
 import static com.pushyun.push.utilities.CommonUtilities.CMS_SERVER_REGISTER_URL;
+=======
+import static com.pushyun.push.utilities.CommonUtilities.SERVER_URL;
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
 import static com.pushyun.push.utilities.CommonUtilities.TAG;
 import static com.pushyun.push.utilities.CommonUtilities.displayMessage;
 
@@ -39,10 +43,20 @@ public final class ServerUtilities
      * 
      * @return whether the registration succeeded or not.
      */
+<<<<<<< HEAD
     public static boolean registerCMSServer(final Context context, final String regId)
     {
         Log.i(TAG, "registering device (regId = " + regId + ")");
         
+=======
+    public static boolean registerA2DMServer(final Context context, final String regId)
+    {
+        Log.i(TAG, "registering device (regId = " + regId + ")");
+        
+        //TODO Test
+        String serverUrl = SERVER_URL;
+        
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
         List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>();
         nameValuePairs.add(new BasicNameValuePair("appkey", "com.push.test"));
         nameValuePairs.add(new BasicNameValuePair("token", "ffffffff-8b25-33fb-e812-480b62ffe7ff"));
@@ -60,7 +74,11 @@ public final class ServerUtilities
             {
                 displayMessage(context, context.getString(R.string.server_registering, i, MAX_ATTEMPTS));
                 
+<<<<<<< HEAD
                 postToCMSServer(CMS_SERVER_REGISTER_URL, nameValuePairs);
+=======
+                postToA2DMServer(serverUrl, nameValuePairs);
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
                 
                 GCMRegistrar.setRegisteredOnServer(context, true);
                 String message = context.getString(R.string.server_registered);
@@ -103,7 +121,11 @@ public final class ServerUtilities
     /**
      * Unregister this account/device pair within the server.
      */
+<<<<<<< HEAD
     public static void unregisterCMSServer(final Context context, final String regId)
+=======
+    public static void unregisterA2DMServer(final Context context, final String regId)
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
     {
         Log.i(TAG, "unregistering device (regId = " + regId + ")");
         
@@ -114,7 +136,11 @@ public final class ServerUtilities
         
         try
         {
+<<<<<<< HEAD
             postToCMSServer(CMS_SERVER_REGISTER_URL, nameValuePairs);
+=======
+            postToA2DMServer(SERVER_URL, nameValuePairs);
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
             GCMRegistrar.setRegisteredOnServer(context, false);
             String message = context.getString(R.string.server_unregistered);
             CommonUtilities.displayMessage(context, message);
@@ -139,7 +165,11 @@ public final class ServerUtilities
      * 
      * @throws IOException propagated from POST.
      */
+<<<<<<< HEAD
     private static void postToCMSServer(String endpoint, List<NameValuePair> nameValuePairs)
+=======
+    private static void postToA2DMServer(String endpoint, List<NameValuePair> nameValuePairs)
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
     {
         HttpClient httpclient = new DefaultHttpClient();
         HttpResponse response;

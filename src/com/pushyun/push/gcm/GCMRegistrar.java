@@ -20,7 +20,11 @@ import android.util.Log;
 public final class GCMRegistrar
 {
     public static final long DEFAULT_ON_SERVER_LIFESPAN_MS = 604800000L;
+<<<<<<< HEAD
     private static final String LOG_TAG = "GCMRegistrar";
+=======
+    private static final String TAG = "GCMRegistrar";
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
     private static final String BACKOFF_MS = "backoff_ms";
     private static final String GSF_PACKAGE = "com.google.android.gsf";
     private static final String PREFERENCES = "com.google.android.gcm";
@@ -33,6 +37,7 @@ public final class GCMRegistrar
     private static GCMBroadcastReceiver sRetryReceiver;
     private static String sRetryReceiverClassName;
 
+<<<<<<< HEAD
     public static boolean isGCMAvailable(Context context)
     {
         try
@@ -47,6 +52,8 @@ public final class GCMRegistrar
         }
     }
     
+=======
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
     public static void checkDevice(Context context)
     {
         int version = Build.VERSION.SDK_INT;
@@ -285,7 +292,11 @@ public final class GCMRegistrar
         editor.commit();
     }
 
+<<<<<<< HEAD
     public static boolean isRegisteredOnCMSServer(Context context)
+=======
+    public static boolean isRegisteredOnServer(Context context)
+>>>>>>> 1220c312c5c9d3868b100b6d6a0d9f152da03a85
     {
         SharedPreferences prefs = getGCMPreferences(context);
         boolean isRegistered = prefs.getBoolean("onServer", false);
